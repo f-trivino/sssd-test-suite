@@ -33,6 +33,7 @@
 - hosts: ad
   gather_facts: yes
   roles:
+  - { role: win-schema, suffix: '{{ ad.suffix }}' }
   - { role: win-dns, domain: '{{ ad.domain }}', hostname: '{{ ad.hostname }}' }
   vars_files:
   - variables.yml
